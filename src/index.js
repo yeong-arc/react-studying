@@ -1,18 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import Clock from './ch_01/DigitalClock';
+// setInterval(() => {
+//   root.render(
+//     <React.StrictMode>
+//       <DigitalClock />
+//     </React.StrictMode>
+//   );
+// }, 1000);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-setInterval(() => {
-  root.render(
-    <React.StrictMode>
-      <Clock />
-    </React.StrictMode>
-  );
-}, 1000);
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
 reportWebVitals();

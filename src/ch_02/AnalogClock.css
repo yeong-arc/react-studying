@@ -1,0 +1,64 @@
+/* 
+  (:root) -> 문서의 최상위 요소를 가리킴 (즉, <html />)
+  (--변수이름) -> css 변수 
+  rotate: var(--degHour); -> 사용자 정의 속성 (var() 을 사용해 접근 가능)
+*/
+:root {
+  --degHour: 0;
+  --degMin: 0;
+  --degSec: 0;
+}
+.clock {
+  width: 500px;
+  height: 500px;
+  background: #ddf6ff url("https://assets.codepen.io/85188/clock-markers.svg")
+    center center no-repeat;
+  position: relative;
+  border-radius: 50%;
+  margin: auto;
+}
+.h-hand,
+.m-hand,
+.s-hand {
+  position: absolute;
+  transform-origin: bottom;
+  border-radius: 40%;
+}
+.h-hand {
+  width: 16px;
+  height: 160px;
+  background: #999;
+  top: calc(50% - 160px);
+  left: calc(50% - 8px);
+  rotate: var(--degHour);
+}
+.m-hand {
+  width: 10px;
+  height: 220px;
+  background: #999;
+  top: calc(50% - 220px);
+  left: calc(50% - 5px);
+  rotate: var(--degMin);
+}
+.s-hand {
+  width: 4px;
+  height: 200px;
+  background: #0bd;
+  top: calc(50% - 200px);
+  left: calc(50% - 2px);
+  rotate: var(--degSec);
+}
+.s-hand::after {
+  border-radius: 50%;
+  display: block;
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: #0bd;
+  position: absolute;
+  bottom: -15px;
+  left: -15px;
+}
+body {
+  padding: 1rem;
+}
