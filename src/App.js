@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 
-import AnalogClock from './ch_02/AnalogClock';
+import Gallery from './ch_03/Gallery';
 
 function App() {
   return (
     <div className="App">
-      <AnalogClock />
+      <Gallery />
     </div>
   );
 }
